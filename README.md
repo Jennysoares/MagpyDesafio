@@ -23,4 +23,4 @@ Há duas maneiras de realizar os testes básicos deste projeto:
 2. Baixe o arquivo [teste-open.js](https://github.com/instruct-br/teste-python-jr-remoto-2021-06/blob/main/tests-open.js)
 3. Com os dois abra o CMD e execute o comando "k6 run -e API_BASE="https://desafiomagpy-instruct.herokuapp.com/" tests-open.js"
 
-* * Para realizar testes na aplicação, basta utilizar alguma ferramenta API Client como por exemplo o "Postman" passando a URL request "https://desafiomagpy-instruct.herokuapp.com/api/projects/" Ou utilizar o [Swagger](https://desafiomagpy-instruct.herokuapp.com/) 
+* * Para realizar testes na aplicação, basta utilizar alguma ferramenta API Client como por exemplo o "Postman" passando a URL request "https://desafiomagpy-instruct.herokuapp.com/api/projects/" Ou utilizar o [Swagger](https://desafiomagpy-instruct.herokuapp.com/) , [redoc](https://desafiomagpy-instruct.herokuapp.com/redoc/)

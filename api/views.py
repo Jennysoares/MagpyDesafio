@@ -6,6 +6,7 @@ from django.db import IntegrityError
 
 from .models import Project,PackageRelease
 from .serializers import ProjectSerializer
+from drf_yasg.utils import swagger_auto_schema
 import requests
 
 class ProjectViewSet(viewsets.ModelViewSet):

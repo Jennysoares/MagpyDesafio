@@ -45,6 +45,10 @@ INSTALLED_APPS = [
     'drf_yasg'
 ]
 
+SWAGGER_SETTINGS = {
+   'LOGIN_URL': '/admin'
+}
+
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
