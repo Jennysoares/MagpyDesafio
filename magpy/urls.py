@@ -16,22 +16,29 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 from rest_framework import routers
-from rest_framework.schemas import get_schema_view
-from rest_framework_swagger.renderers import SwaggerUIRenderer, OpenAPIRenderer
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
 
 from api import views
 
 router = routers.SimpleRouter()
 router.register(r'projects', views.ProjectViewSet, basename="projects")
 schema_view = get_schema_view(
-    title='MagPy API',
-    description=" Uma API REST que gerencia uma coleção de projetos",
-   renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer]
+   openapi.Info(
+      title="MagPy API",
+      default_version='v1',
+      description="uma API REST que gerencia uma coleção de projetos",
+   ),
+   public=True,
+   permission_classes=(permissions.AllowAny,),
 )
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path(r'', schema_view),
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc')
+
 ]

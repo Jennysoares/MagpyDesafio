@@ -1,4 +1,4 @@
-#!d:\jenni\documentos\desafios\instruct\teste-python-jr-remoto-2021-06\magpy_env\scripts\python.exe
+#!D:\Jenni\Documentos\Desafios\Instruct\MagpyDesafio\magpy_env\Scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
