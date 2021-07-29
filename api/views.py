@@ -105,7 +105,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
                 return Response({"error":"One or more packages doesn't exist"}, status=status.HTTP_400_BAD_REQUEST)
             
         except Project.DoesNotExist:
-            return Response({"message":"Project does not exist"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"message":"Project does not exist"}, status=status.HTTP_204_NO_CONTENT)
         
 
     def retrieve(self, request, pk=None):
@@ -115,7 +115,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
             serializer = ProjectSerializer(obj)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Project.DoesNotExist:
-            return Response({"message":"Project does not exist"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"message":"Project does not exist"}, status=status.HTTP_204_NO_CONTENT)
 
 
     def destroy(self, request, pk=None):
@@ -125,4 +125,4 @@ class ProjectViewSet(viewsets.ModelViewSet):
             obj.delete()
             return Response({"message":"Project has been deleted successfully"},status=status.HTTP_200_OK)
         except Project.DoesNotExist:
-            return Response({"message":"Project does not exist"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"message":"Project does not exist"}, status=status.HTTP_204_NO_CONTENT)
